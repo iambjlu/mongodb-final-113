@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待辦事項</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #iframe-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        #embedded-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+<div id="iframe-container">
+    <iframe id="embedded-iframe" src="https://28a6-59-120-242-188.ngrok-free.app"></iframe>
+</div>
+<script>
+
+    //動態調整尺寸
+    function resizeIframe() {
+        var iframe = document.getElementById('embedded-iframe');
+        iframe.style.width = window.innerWidth + 'px';
+        iframe.style.height = window.innerHeight + 'px';
+    }
+    window.addEventListener('resize', resizeIframe);
+    window.addEventListener('load', resizeIframe);
+
+    //禁止拖動
+    document.addEventListener("dragstart", function (e) {
+        e.preventDefault();
+    });
+
+    //禁用部分組合
+    document.addEventListener("keydown", function(e) {
+        // F12
+        if (e.keyCode == 123) {
+            e.preventDefault();
+            // Ctrl+Shift+I
+        } else if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            e.preventDefault();
+            // Shift+F10
+        } else if (e.shiftKey && e.keyCode == 121) {
+            e.preventDefault();
+            // Ctrl+U
+        } else if (e.ctrlKey && e.keyCode == 85) {
+            e.preventDefault();
+            // Command+Option+I
+        } else if (e.metaKey && e.altKey && e.keyCode == 73) {
+            e.preventDefault();
+        }
+    });
+
+    //動態頁面標題
+    const OriginTitle = document.title;
+    let titleTime;
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            document.title = 'O_O 頁面已隱藏 - ' + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 1500);
+            //  clearTimeout(titleTime);
+        }
+        else {
+            document.title = 'ヾ(Ő∀Ő3)ノ歡迎回來！ - ' + OriginTitle;
+            titleTime = setTimeout(function () {
+                document.title = OriginTitle;
+            }, 1500);
+        }
+    });
+
+
+    //禁止雙擊縮放
+    let lastTouchEndTime = 0;
+    document.addEventListener('touchend', (event) => {
+        const now = new Date().getTime();
+        if ((now - lastTouchEndTime) <= 300) {      // 偵測時間差是否小於 300ms
+            event.preventDefault();
+        }
+        lastTouchEndTime = now;
+    }, false);
+
+    // [Safari only] gesturestart event: multi finger gestures touching
+    document.addEventListener('gesturestart', function (event) {
+        // 阻止兩指縮放畫面
+        event.preventDefault();
+    });
+</script>
+</body>
+</html>

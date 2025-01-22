@@ -1,0 +1,37 @@
+- 啟動express
+node mevn-todo\api\index.js
+
+- 啟動mongo
+cmd輸入 mongo
+
+- mongo設置
+port 27017
+Database: todoappdb
+Collection: todoappcollection
+
+- 啟動vue
+cd到 mevn-todo\ui\mongodb_final 檔案夾
+npm run host
+
+啟動後用戶前往 http://[IP]:5173 即可查看
+例如 http://120.117.8.60:5173
+
+- 如果伺服器換IP需要改flutter, macOS, App.vue的api網址
+- 如果ngrok重啟需要改firebase hosting網頁的ui網址
+
+ngrok開多個port
+[執行]
+ngrok start --all
+
+[初始設定]
+在 ~/AppData/Local/ngrok/ngrok.yml，authtoken下面輸入
+
+tunnels:
+  api:
+    addr: 5038
+    proto: http
+    host_header: localhost
+  ui:
+    addr: 5173
+    proto: http
+    host_header: localhost

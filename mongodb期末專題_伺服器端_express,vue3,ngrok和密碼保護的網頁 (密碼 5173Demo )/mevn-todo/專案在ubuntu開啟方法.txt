@@ -1,0 +1,24 @@
+- 啟動express :5038
+node projects/mevn-todo/api/index.js
+
+- ngrok開多個port
+ngrok start --all
+
+- 啟動vue :5173
+cd projects/mevn-todo/ui/mongodb_final
+sudo npm run host
+
+* 如果伺服器重啟
+需要改 Flutter客戶端 、 src/App.vue 的api網址
+需要改 Firebase Hosting 網頁的ui網址
+
+-------------
+
+- mongo資訊
+應該會自己啟動，輸入 mongosh 以手動輸入指令
+port 27017
+Database: todoappdb
+Collection: todoappcollection
+
+- 確認mongo有沒有在線上
+sudo systemctl status mongod

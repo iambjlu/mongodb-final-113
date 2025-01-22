@@ -1,0 +1,11 @@
+使用時
+
+Runner.xcworkspace
+使用Runner.xcworkspace：Release設定檔
+使用Android Studio跑：Debug設定檔
+info.plist改顯示名稱 待辦事項
+
+Android:
+AndroidManifest.xml
+label改待辦事項
+compileSdk改34

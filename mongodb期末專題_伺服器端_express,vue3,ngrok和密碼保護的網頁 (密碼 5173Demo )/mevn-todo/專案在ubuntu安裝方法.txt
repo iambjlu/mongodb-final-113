@@ -1,0 +1,46 @@
+- 安裝express
+(需要先安裝node.js)
+cmd cd到API的地方輸入
+npm install express
+
+- 安裝mongo
+參考 https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+
+- mongo 全新設置(不可以一次貼完)
+sudo mkdir -p /data/db
+sudo chmod 777 /data/db
+sudo systemctl start mongod
+mongosh
+use todoappdb
+db.todoappcollection.insertOne({ id: "1", description: "hi, mongo" })
+
+- 安裝vue
+sudo npm install -g @vue/cli
+sudo npm install -g vite
+
+到 ui/mongodb_final檔案夾
+rm -rf node_modules
+rm package-lock.json
+sudo npm install
+
+* 如果伺服器換IP需要改flutter, macOS, App.vue的api網址
+* 如果ngrok重啟需要改firebase hosting網頁的ui網址
+
+- 安裝ngrok
+
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+tar -xvzf ngrok-v3-stable-linux-amd64.tgz
+sudo mv ngrok /usr/local/bin/ngrok
+
+(Windows) 在 ~/AppData/Local/ngrok/ngrok.yml，authtoken下面輸入
+(Linux)   在 ~/.config/ngrok/ngrok.yml，authtoken下面輸入
+
+tunnels:
+  api:
+    addr: 5038
+    proto: http
+    host_header: localhost
+  ui:
+    addr: 5173
+    proto: http
+    host_header: localhost
