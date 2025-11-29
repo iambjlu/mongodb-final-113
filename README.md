@@ -1,6 +1,6 @@
 # 雲端資料庫實務期末專題：基於生物辨識保護的待辦事項
 Flutter App + Vue Web + PWA + Firebase Hosting + MongoDB + Axios<br>
-支援8種市面常見平台的 App，搭配網頁版(可加入Dock)<br>
+App支援8種市面常見平台，搭配網頁版(可加入Dock)<br>
 隨時安全、方便、快速的存取待辦事項<br>
 詳見幻燈片
 
