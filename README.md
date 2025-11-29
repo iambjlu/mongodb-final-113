@@ -13,13 +13,13 @@ Apple Vision Pro App (支援 Optic ID 虹膜辨識)<br>
 <img width="2732" height="2048" alt="image" src="https://github.com/user-attachments/assets/ab74b235-0683-4e61-aec4-d3ff9c2771f8" />
 
 行動端 App (支援 Touch ID 指紋辨識)<br>
-<img width="450" alt="image" src="https://github.com/user-attachments/assets/1699ab89-00b3-47bc-99f0-db32b9244ed2" />
-<img width="450" height="1536" alt="image" src="https://github.com/user-attachments/assets/74829012-f796-4379-acb9-fac90cbbeef1" />
+<img height="750" alt="image" src="https://github.com/user-attachments/assets/3c9c2bce-7fef-4dad-a72c-e7505060d014" />
+
 
 
 網頁端 (支援Touch ID 指紋辨識，另可加入Dock)<br>
 <img width="1570" height="1440" alt="image" src="https://github.com/user-attachments/assets/cd8ba944-e7c8-4f60-97a2-5ec062627934" />
 
-網頁端 釘選工作列 (支援Windows Hello生物辨識)<br>
+網頁端 釘選到工作列 (支援Windows Hello生物辨識)<br>
 <img width="2066" height="1536" alt="image" src="https://github.com/user-attachments/assets/082bb119-f477-4857-b636-021e0a45e065" />
 
